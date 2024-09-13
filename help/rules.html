@@ -1,0 +1,314 @@
+<HTML>
+<HEAD>
+<TITLE>Zanzibar Bao Rules for the Computer</TITLE>
+</HEAD>
+<BODY>
+
+<H1>Zanzibar Bao Rules for the Computer</H1>
+H.H.L.M. Donkers<br>
+Department of Computer Science, Universiteit Maastricht<br>
+email: donkers@cs.unimaas.nl<P>
+
+The rules for Zanzibar Bao are adapted for computer use from: Alexander J. de Voogt (1995). <I>Limits
+of the Mind. Towards a characterisation of Bao mastership.</i> Ph.D. thesis, University
+of Leiden, The Netherlands. ISBN 90-73782-50-3.
+
+<h1>The Board</h1>
+
+Zanzibar Bao (Or Bao for short) is a game from the mancala family.
+It is played by two persons on a board with four rows of eight
+pits (or holes). The two lower rows are owned by the player called
+South, the two upper rows are owned by the player called
+North. The two middle rows are called front rows and the
+two outer rows are called back rows}. The fifth pit from the
+right (in perspective of the player) on each front row is shaped
+differently and is called the Nyumba or house. The two
+outer pits of the front row are called Kitchwa, and the two pits
+on the front row next to the `Kitchwa' are called the `Kimbi'. Bao
+is played with 64 equal counters (seeds, stones, or 'Kete').
+
+<h2>Board Notation</h2>
+
+The front row of South is indicated by
+the character `A', the back row is indicated by `B'. For North,
+`a' and `b' are used for the front row and back row respectively.
+The holes on each rows are numbered from 1 to 8, starting at the
+right hand of the player owning the rows.  South's Nyumba is
+indicated by `A5' and North's by `a5'. The kitchwas are: A1, A8,
+a1, and a8, the kimbis are: A2, A7, a2, and a7.
+
+A configuration of stones on the board is indicated by four rows
+of numbers, or two rows if the back rows are not of interest. The
+rows of North are always on top. A wildcard `x' can be used to
+indicate that the content of a non-empty pit is not of interest or
+not known.
+
+<H1>Part 1: General Rules</H1>
+
+<B>rule 1.1: Goal of the game.</b> The goal of Zanzibar Bao is to empty the front
+row of the opponent or to make it impossible for the opponent to
+move. <P>
+
+<B>rule 1.2: End of the game.</b> The game ends if (1) the front row of a player is empty
+(even during a move) or (2) if a player cannot move. In both cases
+the other player wins.<P>
+
+<B>rule 1.3: Sowing.</b>
+The basic move of Bao is sowing (spreading) of stones. Sowing is
+the process of putting a determined number of stones one by one in
+consecutive holes in the own two rows of the board in clockwise or
+anti-clockwise direction. During sowing, the direction of the 
+sowing cannot change. Every sowing (spread) has a starting pit, 
+a number of stones to sow, a sowing direction, and an ending pit.<P>
+
+
+<B>rule 1.4: Single capture.</b>
+Capturing in Bao is only allowed if a sowing ends in an non-empty pit
+at the front row that has an opposing non-empty pit at the front
+row of the opponent (this is called mtaji). The player's pit is called the
+<I>capturing pit</i> and the opponent's pit is called the
+<I>captured pit</i>. The capture in Bao consists of taking all
+stones out of the captured pit in the opponent's front row and
+sowing them immediately at the own side of the board. The sowing
+of captured stones must start at one of the kitchwas. 
+<UL>
+<B>rule 1.4a:</b> If the sowing starts at the left kitchwa, the sowing direction is
+clockwise, if the sowing starts at the right kitchwa, the sowing
+direction is anti-clockwise. <P>
+
+<B>rule 1.4b:</b> If the capturing pit is the left kitchwa or kimbi, the sowing must start at the left kitchwa.
+If the capturing pit is the right kitchwa or kimbi, the
+sowing must start at the right kitchwa. <P>
+
+<B>rule 1.4c:</b> When another pit is capturing, the direction can either be chosen by the player if the
+capture is the start of a move in namua stage, or the existing direction of
+the move must be sustained.
+</ul>
+
+<B>rule 1.5: Move.</b>
+A move in Bao is a sequence of sowings and captures by one player.
+A move stops if a sowing ends in an empty pit, but may also stop at the house 
+(see rule 2.5b) or at a takasia-ed hole (see rule 4.1b). After a move the opponent
+is to move.<P>
+
+<B>rule 1.5a: Infinite Moves (special computer rule).</b>
+A move can take a long time and sometimes last forever. However, these infinite moves
+are illegal. If no finite move is available, the game is lost by the player at
+move. Because infinity of a move can be very lenghty to prove, a move is regarded
+infinite if more than a beforehand designated number of stones is sown.<P>
+
+<B>rule 1.6: Endelea.</b>
+If a sowing ends in a non-empty pit (e.g., after sowing there are
+more than one stones in the ending pit) and a capture is not
+allowed, then the move continues in the same direction by taking
+all the stones from that pit and sowing the stones starting at the
+next pit in the same direction. This continuation of sowing is
+called `endelea'. <P>
+<UL>
+<B>rule 1.6a:</b>
+Endelea stops if the sowing ends at the owned house that contains
+six or more stones if the player does not (or can not) decide to play the house 
+(see rule 2.5b).
+<P>
+<B>rule 1.6b:</b> Endelea stops if the sowing ends at  a takasia-ed hole.<P>
+<B>rule 1.6c:</b> Endelea stops if a capture is possible. The move continues 
+with the capture. The direction of the sowing of captured stones is the same as
+the direction of endelea, unless capture occurs at the kichwa or kimbi.<P>
+</uL>
+
+<B>rule 1.7: No-capture moves (takasa).</b>
+If a move does not start with a capture, then capturing is not
+allowed at all during that move. The player is then called to
+<I>takasa</i>. During takasa, the player keeps performing endelea until
+it ends (rule 1.6a/b). During takasa, the direction of the move
+cannot change.<P>
+
+<B>rule 1.7: Capture moves.</B>
+If a move starts with a capture, then more captures can occur
+during endelea later on. If captures take place at the kitchwa or
+kimbi, the direction of the moves changes. 
+<UL>
+<B>rule 1.7a</B> If a player can capture, he must do so.
+</UL>
+
+
+<b>rule 1.8:</b> There are two stages in Bao: Namua and Mtaji.<P> 
+
+<H1>Part 2: Namua stage</H1>
+
+<b>rule 2.1:</b> The game starts in namua stage with the following board configuration: there are six
+stones in South's nyumba and two stones in the hole to the right
+of the nyumba and again two stones in the next hole to the right.
+The same number of stones are in North's nyumba and in the
+consecutive holes to the right (of North). Each player has 22 stones in store.  
+<PRE>
+  b   0 0 0 0 0 0 0 0 
+  a   0 2 2 6 0 0 0 0 
+  A   0 0 0 0 6 2 2 0 
+  B   0 0 0 0 0 0 0 0
+</PRE>
+The first player is South.<P>
+
+
+<b>rule 2.2:</b> During namua stage, the player starts each move with <i>sowing one stone from the
+store</i> on the board each move. When all stones are on the board
+(after 22 moves or 44 plies) the game enters the mtaji stage.<P>
+
+<b>rule 2.3: Capturing in namua stage.</b> A player is allowed to capture 
+a non-empty opponent's hole from the front
+row if there is a non-empty hole at the own front row (the
+capturing hole), directly opposite to the captured hole. The
+player puts (`sows') one stone from the store in the capturing
+hole, takes all stones from the opponent's captured hole and start
+sowing them at one of the own kichwas as described in rule 1.4. <P>
+<UL>
+<b>rule 2.3b:</b> If the capturing hole is not a kichwa or kimbi, the player 
+may choose which kichwa to sow from. The move continues as 
+described above. <P>
+<b>rule 2.3b:</b> If a player can capture, he must do so.<P>
+</UL>
+
+<b>rule 2.4: Takasa in namua stage.</b> If a player cannot capture, he must takasa. In namua, takasa
+starts with sowing one stone from the store in a non-empty hole in
+the front row. Takasa cannot start in the back row.<P>
+<UL>
+<b>rule 2.4a:</b> If the only filled hole on 
+the front row is one of the kichwas, then takasa cannot be done in
+the direction of the back row (because the front row will be empty
+and the game is a loss).<P>
+
+<b>rule 2.4b:</b> Takasa cannot start from the owned house with six or more
+seeds unless it is the only filled hole in the front row. If it is 
+the only hole filled at the front row, then one stone from the store must be 
+put in it, <I>two</i> stones have to be taken out
+and spread to the left or to the right.<P>
+
+<b>rule 2.4c:</b> Takasa cannot start from a hole with only one stone, 
+unless there are no holes with more than one stone on the front row or 
+unless the house is still owned (even with less than 6 stones).
+</UL>
+
+<B>rule 2.5: The house (Nyumba).</b> At the start of the game, 
+both players own their house. 
+<UL>
+<b>rule 2.5a:</b> Players loose their house if it 
+is emptied or when the first capture is made in mtaji stage.<P>
+
+<b>rule 2.5b:</b> If the player still owns the nyumba and a 
+sowing ends in the nyumba then (1) the move ends during takasa if the house contains six or more
+stones, or (2) the move ends during a capture move if no capture is possible at the
+nyumba and <I>if the player wishes to stop</i>. If a player does not wish
+to stop then the player is said to <i>play the house</i>, which means that
+the house is emptied and its stones are spread.<P>
+</UL>
+
+<H1>Part 3: Mtaji stage</H1>
+<B>rule 3.1:</b> The mtaji stage starts if all stones are on the board. <P>
+
+<B>rule 3.2:</b> If the house happens to be still owned by one of the players, it stays
+owned until the first capture occurs. The namua rules for the
+house (2.4b, 2.4c and 2.5b) do not apply anymore. Takasia rules do apply (4.1c) on
+the house.<P>
+
+<B>rule 3.3:</b> In mtaji stage, only holes can be played that contain more than
+one stone. If both rows of a player only contain holes with zero
+or one stones, this player looses the game. Every move in mtaji
+stage starts with selecting a hole and sowing the contents in a
+chosen directory.<P>
+
+<B>rule 3.4: Capture move in Mtaji stage.</b> A capture move in mtaji stage must start from
+a hole on the front row or back row that contains more than one but less
+then 16 stones. After spreading in a chosen direction, the last stone must allow
+capturing. If a player can capture he must do so. The direction
+of the sowing of the captured stones is the same as the selected
+move direction, unless capture occurs on the kichwa or kimbi.<P>
+
+<B>rule 3.5: Takasa in Mtaji stage</b>
+If no capture move is possible, the player must takasa. <P>
+<UL>
+<B>rule 3.5a:</b> If possible,
+the player must takasa from the front row. <P>
+<B>rule 3.5b:</b> If the only filled hole on 
+the front row is one of the kichwas, takasa cannot go in the direction of the
+back row (because the front row will be empty and the game is a
+loss).<P>
+</ul>
+
+<H1>Part 4: Special rules</H1>
+
+<b>rule 4.1: Takasia.</b> If a player must takasa, but he can play such that (1) the
+opponent also must takasa next move and (2) that exactly one of
+the opponent's hole can be captured after that, then the opponent
+is not allowed to empty this <i>takasia-ed</i> hole. (This can only
+happen in mtaji stage.)<p>
+<UL>
+<b>rule 4.1a:</b> However, a hole cannot be <i>takasia-ed</i> (e.g., the opponent is
+allowed to empty it) if it is the house, or if it is the only
+occupied hole in the front row, or if it is the only hole
+containing more than one stones in the front row.<p>
+
+<b>rule 4.1b:</b> If endelea ends in a takasia-ed hole, the move ends.<p>
+
+<b>rule 4.1c:</b> If a house is still owned during Mtaji stage, it cannot be takasia-ed.<p>
+</uL>
+<h1>part 5: Notational system</h1>
+
+Moves are indicated by the row ('A','B','a','b') and number of the hole
+from which the move starts('1'-'8'). The direction of the move is indicated by
+'L' or 'R'. When a player decides to play the house, a '>' is added 
+to the move. A takasa move is indicated by an asterisk '*',  a takasia 
+is indicated by two asterisks '**'. <P>
+
+In namua stage, the row indication can be omitted. If the capturing hole
+is a kichwa or kimbi, the direction indication can be omitted. <P>
+
+The direction indicator is relative to the player at move. It indicates 
+the direction in which the hand moves after putting the first stone 
+in namua stage or after picking up the stones of a pit in mtaji stage.
+So, in a capture move during namua stage, the direction indicates 
+whether the left (L) or right (R) kichwa is chosen to be started from.<P>
+
+A game transcript consists of a head containg the game information and
+one line for every two plies (one move). A move line starts with the
+move number, then a colon, a space, the move for South, a space, the move
+for North and a semicolon follow. After the semicolon, comments may be added.
+
+<h3>Example game</h3>
+<pre>
+South: Ramadhan 
+North: Kijumbe
+place: Zanzibar
+date: 17-10-94
+winner: North
+time: 30 minutes 10 seconds
+takasia: yes
+1: 7L* 5R;
+2: 6R* 6R*;
+3: 7R* 8L*;
+4: 8R* 6R*;
+5: 5R* 8L*;
+6: 7R* 6R*;
+7: 6R* 8L*;
+8: 7R* 6R*;
+9: 8R* 7;
+10: 5L* 5L;
+11: 3R 1;
+12: 5R 7R*; END IN THE HOUSE
+13: 8 2;
+14: 8 2;
+15: 3R* 5R>;
+16: 5R 3L;
+17: 8 6R;
+18: 4R 7;
+19: 5R 8;
+20: 5R 7;
+21: 7 6L;
+22: 2 8;
+23: B2L b7R;  (b7L in Voogt!)
+24: A7L b8R;
+25: A3R a6L;
+26: A7L a6L;  A resigns
+</pre>
+
+</BODY>
+</HTML>

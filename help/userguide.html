@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<TITLE>BAO 0.1 User guide</TITLE>
+</HEAD>
+<BODY>
+
+<H1>BAO 0.1 User guide</H1>
+H.H.L.M. Donkers<br>
+Department of Computer Science, Universiteit Maastricht<br>
+email: donkers@cs.unimaas.nl<br>
+September 5, 2001<P>
+
+<I>Before you study this user guide, please make sure to read the 
+<a href="rules.html"> rules</a> of the game.</i><P>
+
+<h1>Doing a move</h1>
+There are two ways to enter a move:<p>
+<b>textual</b>: enter a legal move string in the inputbox on the bottom left
+and press "enter" or the "Go" button.<p>
+<b>drag and drop</b>: Click on the hole from which you want to play,
+keep the mouse-button down and drag in the desired direction of the move.
+The start hole will turn yellow, and the hole in which you end the dragging
+will turn green. As long as no direction is indicated (no green hole), you can select
+another hole to play by releasing the mouse button.<P>
+
+If the direction of the move is determined by the situation (e.g. capture move
+at a kichwa) only a single click is needed.<p>
+
+If you want to play the nyumba during a drag-and-drop move, select the
+checkbox "play nyumba" <i>before</i> dragging.<P>
+
+New moves are added to the bottom of the move list at the right.<P>
+
+<h2>Illegal moves</h2>
+If the program discovers that you entered an illegal move, it will
+show a message at the bottom of the window. This message will include
+a reference to the rule(s) of the game that are violated.
+
+<h1>Animation</h1>
+The program animates moves automatically. You can adjust the 
+animation speed or turn animation off by using the menu "animation". 
+It is possible stop a long move by selecting "abort" in the animation menu.
+
+<h1>Play against the computer</h1>
+In the menu "game" select "computer" for the north player or 
+for the south player. Then select "New" in this menu. Fill in
+the game properties and ckick ok. The game now starts. If the computer plays south then
+the program will start immediately. If you want to
+stop playing against the computer, select "stop" in this menu.<P>
+
+During the time that the computer is searching for a move or during an animation
+of a move, many options in the menu are disabled. If needed, you can abort the
+search by selecting "abort" in the menu "Compute". This ends the current game.<P>
+
+<h1>Saving a game</h1>
+Select "save" in the menu "File" to save a game 
+transcript of the game being played. 
+
+<h1>Game analysis</h1>
+You can analyse stored games or a game just being played by using the
+move list at the right of the board. This can only be done when the computer
+is not actually playing against you. If so, select "stop" from the menu "game".<P>
+
+Double-click on a move in the movelist to go to the position <i>after that
+move was played</i>. Use the symbol "||&lt;" to return to the start of
+the game. If you click on a move below the actual position, the moves up to
+the point at wich you clicked will be animated (if animation is turned on). If you
+click at a move above the actual position, no animation will be performed.<P>
+
+<h3>Loading games</h3>
+You can analyse stored games by selecting "Load" in the file menu.<P>
+
+<h3>Changing moves</h3>
+During analysis you can enter new moves at a certain position. This move will 
+then replace the move in the movelist and all moves after that are deleted.<P>
+
+<h3>Computer search</h3>
+It is possible to let the computer find the best move at a certain position
+during the analysis of a game. Select "Compute now" from the menu "Compute". 
+The answer of the search will be displayed in the engine report form. (Select
+"show engine report" from this menu.
+
+<h1>Extra's</h1>
+
+<h3>Openings</h3>
+You can use non-official opening positions by selecting "manual" for "opening"
+at the "game" menu.<P>
+
+<h3>Engine report</h3>
+During a play against the computer, you can make the the engine report visible
+by selecting "show engine report" from the "compute" menu.<P>
+
+The report shows the best move as computed, the evaluation of this move,
+the number of nodes generated, the time used, and the number of nodes
+generated per second. The report also shows the number of long moves that
+where encountered during search.
+
+<h3>Search depth</h3>
+It is possible to adjust the maximum search depth of the search engine by
+selecting "search depth" from the "compute" menu.<P>
+
+<h3>Long move limit</h3>
+To adjust the limit that the computer uses to detect long moves, select
+"Long move limit" from the "compute" menu.
+
+<h3>Disable Takasia</h3>
+Since takasia is a complex rule and some players forget about it,
+in Bao 0.1 you can disable the rule of takasia. (See "game" menu, option "rules"). 
+When a game is stored in a file, the status of the takasia rule is included.
+
+</BODY>
+</HTML>
