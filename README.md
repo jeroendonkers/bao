@@ -10,4 +10,6 @@ Please, use the code as you wish to produce a newer version, e.g. an app for And
 
 Bao is really an interesting and challenging board game. It deserves to be more kmown and played. The rules of the computer-version of the game are specified under de folder "rules"
 
+In folder "executable" you can find the runtime executable as compiled in 2003. It still seems to run. Please adjust the search depth in the advanced submenu from 64 to a lower value if the computer respons is too slow.
+
 Jeroen Donkers
